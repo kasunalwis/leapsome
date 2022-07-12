@@ -1,0 +1,23 @@
+{
+  "name": "leapsome",
+  "version": "1.0.0",
+  "description": "Testing framework for leapsome home task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasunalwis/leapsome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kasunalwis/leapsome/issues"
+  },
+  "homepage": "https://github.com/kasunalwis/leapsome#readme",
+  "dependencies": {
+    "cypress": "^10.3.0",
+    "typescript": "^4.7.4"
+  }
+}
