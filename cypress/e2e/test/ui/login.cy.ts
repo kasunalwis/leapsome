@@ -1,14 +1,12 @@
-
-import { testUsers } from '../../fixtures/users';
-import { LoginPage } from '../pages';
-import { FeedbackPage } from '../pages/feedback_page';
+import { testUsers } from '@fixtures/users';
+import { FeedbackWall, LoginPage } from 'cypress/e2e/pages';
 
 describe('Authentication flow', () => {
     it('Verify valid user can login and logout from the application', () => {
         LoginPage.visitLoginPage();
         LoginPage.loginWithCredentials(testUsers.login.username, testUsers.login.seedPassword);
-        FeedbackPage.verifyFeedBackPageLoadedProperly()
-        FeedbackPage.logOutFromApplication();
+        FeedbackWall.verifyFeedBackPageLoadedProperly();
+        FeedbackWall.logOutFromApplication();
         LoginPage.verifyLoginPageLoadedProperly();
     });
 

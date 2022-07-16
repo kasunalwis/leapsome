@@ -12,8 +12,17 @@ module.exports = defineConfig({
   pageLoadTimeout: 5000,
   requestTimeout: 5000,
   retries: 0,
+  env: {
+    allure: true,
+    allureResultsPath: "allure-results",
+    allureLogCypress: true,
+  },
   e2e: {
-    specPattern: "./cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    setupNodeEvents(on, config) {
+      return require("./cypress/plugins/index.ts")(on, config);
+    },
+    specPattern: "./cypress/e2e/test/**/*.cy.ts",
     baseUrl: "http://localhost:3000",
+    experimentalSessionAndOrigin: true
   },
 });

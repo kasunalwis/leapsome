@@ -1,16 +1,36 @@
-const feedbackPageSelectors = {
+const feedbackWallSelectors = {
     fullScreenOption: '[title="Toggle Fullscreen"]',
-    createNewFeedBackButton: '[type="button"]',
-    signOutLink: '[data-test-id="signOut"]'
+    createNewFeedBackButton: '[data-test-id="createNewFeedBack"]',
+    signOutLink: '[data-test-id="signOut"]',
+    feedbackWallTitle: '[data-test-id="feedBackWallTitle"]',
+    feedbackWallBody: '[data-test-id="feedBackWallBody"]'
 }
 
-export class FeedbackPage {
+export class FeedbackWall {
     static verifyFeedBackPageLoadedProperly() {
-        cy.get(feedbackPageSelectors.fullScreenOption).should('be.visible');
-        cy.get(feedbackPageSelectors.createNewFeedBackButton).should('be.visible');
+        cy.allure().logStep('Verify Feed back page loaded properly')
+        cy.get(feedbackWallSelectors.fullScreenOption).should('be.visible');
+        cy.get(feedbackWallSelectors.createNewFeedBackButton).should('be.visible');
     }
 
     static logOutFromApplication() {
-        cy.get(feedbackPageSelectors.signOutLink).click();
+        cy.allure().logStep('Log out from application')
+        cy.get(feedbackWallSelectors.signOutLink).click();
+    }
+
+    static initiateCreateNewFeedBack() {
+        cy.allure().logStep('Initiate create new feedback')
+        cy.get(feedbackWallSelectors.createNewFeedBackButton).click();
+    }
+
+    static verifyFeedBackDisplayInWall(title: string, body: string, index: number = 0) {
+        cy.allure().logStep('Verify feed back display in wall')
+        cy.get(feedbackWallSelectors.feedbackWallTitle).eq(index).should('contain', title);
+        cy.get(feedbackWallSelectors.feedbackWallBody).eq(index).should('contain', body);
+    }
+
+    static createdFeedBack(title: string, body: string, receiverId: number) {
+        cy.allure().logStep('Created Feed back');
+        cy.createFeedBack(title, body, receiverId);
     }
 }

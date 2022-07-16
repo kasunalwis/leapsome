@@ -4,13 +4,13 @@
   "description": "Testing framework for leapsome home task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run --config baseUrl=${baseUrl:=http://localhost:3000} --browser chrome --headed --spec './cypress/e2e/test/**/*.cy.ts'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kasunalwis/leapsome.git"
   },
-  "author": "",
+  "author": "Kasun Alwis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kasunalwis/leapsome/issues"
@@ -18,6 +18,8 @@
   "homepage": "https://github.com/kasunalwis/leapsome#readme",
   "dependencies": {
     "cypress": "^10.3.0",
-    "typescript": "^4.7.4"
+    "@faker-js/faker": "^6.3.1",
+    "typescript": "^4.7.4",
+    "@shelex/cypress-allure-plugin": "^2.28.0"
   }
 }
