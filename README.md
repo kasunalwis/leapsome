@@ -4,9 +4,9 @@ This UI testing framework design to test Leapsome case study. Framework design u
 
 Folder Structure
 
-fixtures - Contains external static data that we want to use in the test files.
-e2e - Contains all the page objects and test cases.
-support - It contains all the reusable behavior of the custom commands.
+- fixtures - Contains external static data that we want to use in the test files.
+- e2e - Contains all the page objects and test cases.
+- support - It contains all the reusable behavior of the custom commands.
 
 # Getting Started
 
