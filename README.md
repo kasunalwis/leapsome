@@ -15,7 +15,10 @@ Make sure you have NodeJS installed.
 - git clone [git@github.com:kasunalwis/leapsome.git](https://github.com/kasunalwis/leapsome.git)
 - cd leapsome
 - npm install
-- To execute all the tests (Both UI and API) type `npm test`
+- To execute all the tests (Both UI and API)
+  - Make sure [test data attribute PR](https://github.com/leapsome-interview/kasun-alwis/pull/1) is merged to master
+  - Make sure both application and data base is up and running on `http://localhost:3000/`
+  - `npm test`
 
 Sample execution Report
 
