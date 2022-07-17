@@ -15,8 +15,7 @@ Make sure you have NodeJS installed.
 - git clone [git@github.com:kasunalwis/leapsome.git](https://github.com/kasunalwis/leapsome.git)
 - cd leapsome
 - npm install
-- To execute all the tests (Both UI and API) type below command in terminal
-- npm test
+- To execute all the tests (Both UI and API) type `npm test`
 
 Sample execution Report
 
