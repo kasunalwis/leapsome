@@ -21,8 +21,7 @@ function loginRequest(username: string, password: string) {
     body: {
       username: username,
       password: password
-    },
-    failOnStatusCode: false
+    }
   }).then(({ body, status }) => {
     expect(status, 'Successfully login').to.equal(200);
     ACCESS_TOKEN = 'Bearer ' + body.accessToken;
