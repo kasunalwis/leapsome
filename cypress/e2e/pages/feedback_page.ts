@@ -29,8 +29,8 @@ export class FeedbackWall {
         cy.get(feedbackWallSelectors.feedbackWallBody).eq(index).should('contain', body);
     }
 
-    static createdFeedBack(title: string, body: string, receiverId: number) {
+    static createdFeedBack(title: string, body: string, receiverId: number, expectedStatusCode = 200) {
         cy.allure().logStep('Created Feed back');
-        cy.createFeedBack(title, body, receiverId);
+        cy.createFeedBack(title, body, receiverId, expectedStatusCode);
     }
 }

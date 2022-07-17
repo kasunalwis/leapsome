@@ -3,9 +3,16 @@ import { testUsers } from '@fixtures/users';
 import { FeedbackWall, LoginPage } from 'cypress/e2e/pages';
 
 describe('Feedback flow via API', () => {
-    it('Successfully perform POST call for feedback endpoint', () => {
+    beforeEach(() => {
         LoginPage.loginWithAuthToken(testUsers.login.username, testUsers.login.seedPassword);
+    });
+
+    it('Successfully perform POST call for feedback endpoint', () => {
         FeedbackWall.createdFeedBack(feedBackData.title, feedBackData.body, feedBackData.id);
+    });
+
+    it('Should not allowed to provide feedback for same user', () => {
+        FeedbackWall.createdFeedBack(feedBackData.title, feedBackData.body, 1, 400);
     });
 
     const feedBackData = {

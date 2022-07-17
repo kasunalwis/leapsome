@@ -7,8 +7,8 @@ Cypress.Commands.add('loginWithAuthToken', (username, password) => {
   });
 });
 
-Cypress.Commands.add('createFeedBack', (title, body, receiverId) => {
-  feedback(title, body, receiverId);
+Cypress.Commands.add('createFeedBack', (title, body, receiverId, expectedStatusCode) => {
+  feedback(title, body, receiverId, expectedStatusCode);
 });
 
 function loginRequest(username: string, password: string) {
@@ -29,7 +29,7 @@ function loginRequest(username: string, password: string) {
   });
 }
 
-function feedback(title: string, body: string, receiverId: number) {
+function feedback(title: string, body: string, receiverId: number, expectedStatusCode: number) {
   if (ACCESS_TOKEN) {
     cy.request({
       method: 'POST',
@@ -41,9 +41,10 @@ function feedback(title: string, body: string, receiverId: number) {
         body: body,
         receiverId: receiverId,
         title: title
-      }
+      },
+      failOnStatusCode: false
     }).then(({ status }) => {
-      expect(status, 'Feedback created').to.equal(200);
+      expect(status, 'Feedback created').to.equal(expectedStatusCode);
     });
   } else {
     throw new Error('Please login before calling internal api endpoints');
