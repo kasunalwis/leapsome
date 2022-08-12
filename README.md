@@ -16,13 +16,14 @@ Make sure you have NodeJS installed.
 - cd leapsome
 - npm install
 - To execute all the tests (Both UI and API)
-  - Make sure [test data attribute PR](https://github.com/leapsome-interview/kasun-alwis/pull/1) is merged to master
+  - Make sure [test data attribute PR](https://github.com/leapsome-interview/kasun-alwis/pull/1) is merged to main
   - Make sure both application and data base is up and running on `http://localhost:3000/`
   - `npm test`
 
 Sample execution Report
 
-![Screenshot 2022-07-17 at 09 30 40](https://user-images.githubusercontent.com/11239934/179388553-9c16497b-8c93-44cd-9ab5-9ca53a36beca.png)
+![Screenshot 2022-07-17 at 10 30 44](https://user-images.githubusercontent.com/11239934/179390745-30201f20-3e31-4572-95ff-82a794499db9.png)
+
 
 In order to view allure report 
 
@@ -31,7 +32,7 @@ In order to view allure report
 - In terminal type `allure generate`
 - To view the report type `allure open`
 
-![Screenshot 2022-07-17 at 09 40 29](https://user-images.githubusercontent.com/11239934/179388882-780ca636-bfbe-449f-a9f2-0014820a3012.png)
+![Screenshot 2022-07-17 at 10 31 50](https://user-images.githubusercontent.com/11239934/179390760-8d91c520-dc79-4feb-84ad-de8d5ebb89c4.png)
 
-![Screenshot 2022-07-17 at 09 40 54](https://user-images.githubusercontent.com/11239934/179388887-06e57498-a351-44fd-9e49-56430b65c9d8.png)
+![Screenshot 2022-07-17 at 10 33 25](https://user-images.githubusercontent.com/11239934/179390766-e6d83b92-f9cf-4ae6-a207-c18750e6df5e.png)
 
