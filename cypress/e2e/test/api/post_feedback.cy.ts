@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { testUsers } from '@fixtures/users';
-import { FeedbackWall, LoginPage } from 'cypress/e2e/pages';
+import { FeedbackWall, LoginPage } from '@lib/index';
 
 describe('Feedback flow via API', () => {
     beforeEach(() => {

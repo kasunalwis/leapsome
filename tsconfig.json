@@ -8,7 +8,7 @@
       "types": ["cypress", "node", "@shelex/cypress-allure-plugin"],
       "paths": {
         "@fixtures/*": ["./cypress/fixtures/*"],
-        "@lib/*": ["./cypress/pages/*"]
+        "@lib/*": ["./cypress/e2e/pages/*"]
       }
     },
     "include": ["cypress/**/*.ts"]
